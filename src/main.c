@@ -2,8 +2,8 @@
 #include <elf.h>
 #include <errno.h>
 #include <inttypes.h>
-#include <stddef.h>
 #include <stdbool.h>
+#include <stddef.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -130,8 +130,8 @@ int main(int argc, char *argv[]) {
 
   if (main_image.interp_path[0] != '\0') {
     printf("Loading interpreter: %s\n", main_image.interp_path);
-    if (!load_elf_image(main_image.interp_path, options.interp_base, &interp_image,
-                        options.verbose)) {
+    if (!load_elf_image(main_image.interp_path, options.interp_base,
+                        &interp_image, options.verbose)) {
       return EXIT_FAILURE;
     }
     interp_entry = interp_image.entry_point;
